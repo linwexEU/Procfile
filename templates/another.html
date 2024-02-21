@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <nav>
+        <ul>
+            {% for link in links %} 
+                {% if request.path == link.link %}
+                    {% set state = "active" %}
+                {% else %}
+                    {% set state = "" %}
+                {% endif %}
+                <li><a class="{{ state }}" href="{{ link.link }}">{{ link.name }}</a></li>
+                
+            {% endfor %}
+        </ul>
+    </nav>
+</body>
+</html>

@@ -1,0 +1,59 @@
+body {
+	background-color: gray;
+}
+
+.cards {
+	display: flex;
+	flex-direction: column;
+	gap: 50px;
+	margin-top: 100px;
+}
+
+.cards-wrapper {
+	display: flex;
+	gap: 20px;
+	justify-content: center;
+	padding: 20px 20px;
+}
+
+.btn-outline-primary {
+	max-width: 150px;
+	margin: 0 auto;
+}
+
+.alert-warning, .alert-secondary, .alert-success{
+	max-width: 250px;
+	margin: 0 auto;
+}
+
+.yellow {
+	color: lightgoldenrodyellow;
+}
+
+.yellow:hover {
+	color: yellow;
+}
+
+.name {
+	color: lightskyblue;
+}
+
+.time {
+	color: fuchsia;
+}
+
+.active {
+	color: greenyellow;
+}
+
+.diactive {
+	color: black;
+}
+
+.cat {
+	color: indianred;
+}
+
+.cat_url {
+	color: lightskyblue;
+}

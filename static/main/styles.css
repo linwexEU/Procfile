@@ -1,0 +1,16 @@
+body {
+	margin: 0 auto;
+}
+
+.active {
+	color: greenyellow;
+}
+
+.diactive {
+	color: grey;
+}
+
+img {
+	width: 100%;
+	height: 100%;
+}

@@ -1,0 +1,19 @@
+.cards {
+	display: flex;
+	flex-direction: column;
+	gap: 50px;
+	margin-top: 100px;
+}
+
+.cards-wrapper {
+	display: flex;
+	gap: 20px;
+	justify-content: center;
+	padding: 20px 20px;
+}
+
+.btn-outline-primary {
+	max-width: 150px;
+	margin: 0 auto;
+	margin-bottom: 100px;
+}

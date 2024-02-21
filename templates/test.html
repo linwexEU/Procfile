@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+		<link rel="stylesheet" href="{{ url_for('static', filename='test/styles.css') }}" />
+	</head>
+	<nav>
+        <ul>
+            {% for link in links %} 
+                {% if request.path == link.link %}
+                    {% set state = "active" %}
+                {% else %}
+                    {% set state = "diactive" %}
+                {% endif %}
+                <li><a class="{{ state }}" href="{{ link.link }}">{{ link.name }}</a></li>
+                
+            {% endfor %}
+        </ul>
+    </nav>
+    <ul>
+    	{% for cat in categories %}
+    		<li><a class="cat" href="/{{ cat.id }}/">{{ cat.title }}</a></li>
+    	{% endfor %}
+    </ul>
+    <nav>
+    	<ul>
+    		{% for item in items %}
+    			<li><a class="cat_url" href="/{{ item.cat }}/{{ item.id }}/">...</a></li>
+    		{% endfor %}
+    	</ul>
+    </nav>
+	<body>
+		<div class="cards">
+			<div class="cards-wrapper">
+				<div class="card" style="width: 18rem;">
+				  <div class="card-body">
+				    <h5 class="card-title">Card title</h5>
+				    <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+				    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+				    <a href="#" class="card-link">Card link</a>
+				    <a href="#" class="card-link">Another link</a>
+				  </div>
+				</div>
+				<div class="card" style="width: 18rem;">
+				  <div class="card-body">
+				    <h5 class="card-title">Card title</h5>
+				    <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+				    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+				    <a href="#" class="card-link">Card link</a>
+				    <a href="#" class="card-link">Another link</a>
+				  </div>
+				</div>
+				<div class="card" style="width: 18rem;">
+				  <div class="card-body">
+				    <h5 class="card-title">Card title</h5>
+				    <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+				    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+				    <a href="#" class="card-link">Card link</a>
+				    <a href="#" class="card-link">Another link</a>
+				  </div>
+				</div>
+			</div>
+			<div class="cards-wrapper">
+				<div class="card" style="width: 18rem;">
+				  <div class="card-body">
+				    <h5 class="card-title">Card title</h5>
+				    <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+				    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+				    <a href="#" class="card-link">Card link</a>
+				    <a href="#" class="card-link">Another link</a>
+				  </div>
+				</div>
+				<div class="card" style="width: 18rem;">
+				  <div class="card-body">
+				    <h5 class="card-title">Card title</h5>
+				    <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+				    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+				    <a href="#" class="card-link">Card link</a>
+				    <a href="#" class="card-link">Another link</a>
+				  </div>
+				</div>
+				<div class="card" style="width: 18rem;">
+				  <div class="card-body">
+				    <h5 class="card-title">Card title</h5>
+				    <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+				    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+				    <a href="#" class="card-link">Card link</a>
+				    <a href="#" class="card-link">Another link</a>
+				  </div>
+				</div>
+			</div>
+			{% if user.is_admin %}			
+				<button type="button" class="btn btn-outline-primary">Luck</button>
+			{% else %}
+				<button disabled type="button" class="btn btn-outline-primary">Luck</button>
+			{% endif %}
+
+
+			{% for club_name, club_data in clubs.clubs.items() -%}
+				<p><label class="name">{{ club_name }}</label> - {{ club_data.address }}:</p>
+				<ul>
+					{% for time, act in club_data.timetable.items() -%}
+						<li><label class="time">{{ time }}:</label> {{ act }}</li>
+					{% endfor %}
+				</ul>
+			{% endfor %}
+		</div>
+	</body>
+</html>
